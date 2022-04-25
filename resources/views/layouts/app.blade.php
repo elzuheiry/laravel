@@ -39,14 +39,14 @@
 
           @if (!auth("web")->check())
           <li class="menu-link" id="registration">
-            <a>join us <i class="fas fa-caret-down"></i></a>
+            <a>{{ __("messages.joinUs") }} <i class="fas fa-caret-down"></i></a>
 
             <ul class="dropMenu" id="dropMenu">
               <li class="dropMenu-link">
-                <a href="{{ route("login") }}">login</a>
+                <a href="{{ route("login") }}">{{ __("messages.login") }}</a>
               </li>
               <li class="dropMenu-link">
-                <a href="{{ route("register") }}">register</a>
+                <a href="{{ route("register") }}">{{ __("messages.registration") }}</a>
               </li>
             </ul>
           </li>

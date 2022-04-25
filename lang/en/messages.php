@@ -2,12 +2,6 @@
 
 return [
 
-    'requireInput' => 'The field is required .!',
-    'takenName' => 'The name is elready taken .!',
-    'takenMail' => 'The mail is elready taken .!',
-    "mustBeNumber" => "The text must be numbers .!",
-    "validateMail" => "The text must be validate e-mail .!",
-    "nameText" => "The text must be string .!",
     "username" => "username",
     "fullname" => "fullname",
     "email" => "email",
@@ -39,4 +33,8 @@ return [
     "logout" => "logout",
     "dashboard" => "dashboard",
     "picture" => "pictuer",
+    "joinUs" => "join us",
+    "password" => "password",
+    "registration" => "registration",
+    "login" => "login",
 ];

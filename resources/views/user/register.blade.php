@@ -7,7 +7,7 @@
         @csrf
 
         <div class="form-row">
-          <h2>join us</h2>
+          <h2>{{ __("messages.joinUs") }}</h2>
         </div>
 
         <div class="form-row">
@@ -22,7 +22,7 @@
             <label for=""><i class="fas fa-user"></i></label>
             <input
               type="text"
-              placeholder="fullname"
+              placeholder="{{ __("messages.fullname") }}"
               autocomplete="of"
               name="name"
               value="{{ old('name') }}"
@@ -35,7 +35,7 @@
           </div>
           <div class="box-input">
             <label for=""><i class="fas fa-key"></i></label>
-            <input type="text" placeholder="username" name="username" value="{{ old('username') }}" />
+            <input type="text" placeholder="{{ __("messages.username") }}" name="username" value="{{ old('username') }}" />
             <div class="error-messages">
               @error('username')
                 <p>{{ $message }}</p>
@@ -47,7 +47,7 @@
             <label for=""><i class="fas fa-key"></i></label>
             <input
               type="password"
-              placeholder="password"
+              placeholder="{{ __("messages.password") }}"
               name="password"
             />
             <div class="error-messages">
@@ -60,7 +60,7 @@
 
         <div class="form-row">
           <button type="submit" class="btn-form">
-            registration
+            {{ __("messages.registration") }}
           </button>
         </div>
       </form>

@@ -2,12 +2,6 @@
 
 return [
     
-    'requireInput' => 'الحقل مطلوب',
-    'takenName' => 'الاسم مأخوذ',
-    'takenMail' => 'الإيميل مأخوذ',
-    "mustBeNumber" => " يجب ان يكون النص ارقام",
-    "validateMail" => "يجب ان يكون النص إيميل",
-    "nameText" => "يجب ان يكون النص حروف",
     "username" => "اسم المستخدم",
     "fullname" => "الاسم بالكامل",
     "email" => "الإيميل",
@@ -39,5 +33,9 @@ return [
     "logout" => "تسجيل الخروج",
     "dashboard" => "لوحة التحكم",
     "picture" => "صوره",
+    "joinUs" => "أنضم الينا",
+    "password" => "كلمة المرور",
+    "registration" => "التسجيل",
+    "login" => "تسجيل الدخول",
 
 ];
