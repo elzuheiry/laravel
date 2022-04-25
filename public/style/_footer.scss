@@ -1,0 +1,48 @@
+.footer {
+  width: 100%;
+  background: $mainColor;
+  padding: 2em 0;
+
+  &-container {
+    width: 85%;
+    margin: auto;
+
+    .footer-data {
+      @include breakpoint-down(large) {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      @include breakpoint-up(large) {
+        display: flex;
+      }
+
+      p {
+        @include breakpoint-down(large) {
+          margin-bottom: 1em;
+          text-align: center;
+        }
+
+        @include breakpoint-up(large) {
+          margin-right: 1em;
+        }
+      }
+
+      a {
+        margin-right: 1rem;
+        font-size: 1rem;
+        text-transform: capitalize;
+        text-decoration: underline;
+
+        @include breakpoint-down(large) {
+          margin-bottom: 1rem;
+        }
+
+        @include breakpoint-up(large) {
+          margin-right: 1rem;
+        }
+      }
+    }
+  }
+}

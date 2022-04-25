@@ -1,0 +1,29 @@
+html,
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Raleway", sans-serif;
+}
+
+body {
+    background: $darkColor;
+    color: $whiteColor;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: $secondDarkColor;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $secondMainColor;
+    border-radius: 0.3em;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: $whiteColor;
+}

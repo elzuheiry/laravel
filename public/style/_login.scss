@@ -1,0 +1,198 @@
+.login-form {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include breakpoint-down(medium) {
+        flex-direction: column;
+    }
+
+    .form-container {
+        @include breakpoint-up(biglarge) {
+            width: 30em;
+            height: 30em;
+        }
+
+        @include breakpoint-down(biglarge) {
+            width: 30em;
+            height: 25em;
+        }
+
+        @include breakpoint-down(large) {
+            width: 25em;
+            height: 25em;
+        }
+
+        @include breakpoint-down(sosmaller) {
+            width: 22em;
+            height: 25em;
+        }
+
+        form {
+            @include breakpoint-up(biglarge) {
+                margin-top: 7em;
+            }
+
+            @include breakpoint-down(biglarge) {
+                margin-top: 2em;
+            }
+
+            .form-row {
+                @include breakpoint-down(large) {
+                    width: 17em;
+                    margin: auto;
+                }
+
+                @include breakpoint-down(sosmaller) {
+                    width: 13em;
+                }
+
+                @include breakpoint-up(large) {
+                    width: 20em;
+                    margin: auto;
+                }
+
+                &:first-child {
+                    margin-bottom: 3em;
+                }
+
+                &:nth-child(2) {
+                    margin-bottom: 2em;
+                }
+
+                h2 {
+                    display: block;
+                    text-transform: uppercase;
+                    font-weight: 800;
+                    background: $mainColor;
+                    border-radius: 2em;
+                    text-align: center;
+                    width: 100%;
+                    margin: auto;
+                    padding: 0.5em 0;
+
+                    @include breakpoint-down(sosmaller) {
+                        font-size: 1.2rem;
+                    }
+                }
+
+                .error-message {
+                    width: 100%;
+                    margin-bottom: 1em;
+                    min-height: 2em;
+                    height: auto;
+                    text-align: center;
+
+                    p {
+                        font-size: 0.885rem;
+                        color: #fe6c0c;
+                    }
+                }
+
+                .box-input {
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    margin-bottom: 1.5em;
+
+                    label {
+                        position: absolute;
+                        top: 0;
+                        left: -2.5em;
+                        font-size: 1.8rem;
+                        color: $secondDarkColor;
+                        text-align: center;
+                        border-radius: 50%;
+                        border: 1px solid $secondDarkColor;
+                        padding: 0.2em 0.3em;
+                        margin-right: 0.5em;
+                    }
+
+                    input {
+                        background: $whiteColor;
+                        color: $darkColor;
+                        border: 0;
+                        border-radius: 1.4em;
+                        outline: none;
+                        width: 100%;
+                        height: 3em;
+                        font-size: 1rem;
+                        text-align: center;
+                        font-weight: 700;
+
+                        &::-webkit-input-placeholder {
+                            /* WebKit, Blink, Edge */
+                            color: $darkColor;
+                            opacity: 1;
+                            font-weight: 900;
+                            text-transform: uppercase;
+                        }
+                    }
+
+                    .error-messages {
+                        width: 100%;
+                        min-height: 1.2em;
+                        height: auto;
+                        padding-left: 1em;
+
+                        p {
+                            font-size: 0.885rem;
+                            color: $error;
+                        }
+                    }
+                }
+
+                .btn-form {
+                    background: $mainColor;
+                    color: $whiteColor;
+                    border: 0;
+                    width: 100%;
+                    height: 3em;
+                    border-radius: 2em;
+                    outline: none;
+                    cursor: pointer;
+                    font-size: 1.1rem;
+                    text-transform: uppercase;
+                    font-weight: 800;
+                    transition: all 200ms ease-in;
+
+                    &:hover {
+                        background: #fafafa;
+                        color: #fe6c0c;
+                        transform: translateY(-0.5em);
+                    }
+                }
+            }
+        }
+    }
+
+    .form-cover {
+        @include breakpoint-down(biglarge) {
+            width: 37em;
+            height: 27em;
+        }
+
+        @include breakpoint-down(large) {
+            width: 27em;
+            height: 20em;
+        }
+
+        @include breakpoint-down(sosmaller) {
+            width: 22em;
+            height: 15em;
+        }
+
+        @include breakpoint-up(biglarge) {
+            width: 45em;
+            height: 35em;
+        }
+
+        .box-img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

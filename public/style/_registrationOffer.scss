@@ -1,0 +1,232 @@
+.create-offer {
+    width: 100%;
+    min-height: 100vh;
+    padding: 4em 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .form-container {
+        @include breakpoint-up(biglarge) {
+            width: 30em;
+            height: auto;
+        }
+
+        @include breakpoint-down(biglarge) {
+            width: 28em;
+        }
+
+        @include breakpoint-down(large) {
+            width: 23em;
+        }
+
+        @include breakpoint-down(medium) {
+            width: 28em;
+        }
+
+        @include breakpoint-down(sosmaller) {
+            width: 22em;
+            height: 32em;
+        }
+
+        form {
+            padding: 1.5em 0;
+            height: auto;
+
+            .form-row {
+                margin: auto;
+
+                @include breakpoint-down(large) {
+                    width: 15em;
+                }
+
+                @include breakpoint-down(medium) {
+                    width: 20em;
+                }
+
+                @include breakpoint-down(sosmaller) {
+                    width: 13em;
+                }
+
+                @include breakpoint-up(large) {
+                    width: 20em;
+                }
+
+                &:first-child {
+                    margin-bottom: 3em;
+                }
+
+                &:nth-child(2) {
+                    margin-bottom: 2em;
+                }
+
+                h2 {
+                    display: block;
+                    text-transform: uppercase;
+                    font-weight: 800;
+                    background: $mainColor;
+                    border-radius: 2em;
+                    text-align: center;
+                    width: 75%;
+                    margin: auto;
+                    padding: 0.5em 0;
+                }
+
+                .error-message {
+                    width: 100%;
+                    margin-bottom: 1em;
+                    height: 2em;
+                    text-align: center;
+
+                    p {
+                        font-size: 0.885rem;
+                        color: $mainColor;
+                    }
+                }
+
+                .box-input {
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    margin-bottom: 1.5em;
+
+                    label {
+                        position: absolute;
+                        top: 0;
+                        left: -2em;
+                        font-size: 1.9rem;
+                        color: #4e4e4e;
+                        text-align: center;
+                        border-radius: 50%;
+                        border: 1px solid #4e4e4e;
+                        padding: 0.2em 0.3em;
+                        margin-right: 0.5em;
+                    }
+
+                    input {
+                        background: $whiteColor;
+                        color: $darkColor;
+                        border: 0;
+                        border-radius: 1.4em;
+                        outline: none;
+                        width: 100%;
+                        height: 3em;
+                        font-size: 1rem;
+                        text-align: center;
+                        font-weight: 700;
+
+                        &::-webkit-input-placeholder {
+                            /* WebKit, Blink, Edge */
+                            color: $darkColor;
+                            opacity: 1;
+                            font-weight: 900;
+                            text-transform: uppercase;
+                        }
+                    }
+
+                    select {
+                        background: $whiteColor;
+                        color: $darkColor;
+                        border: 0;
+                        border-radius: 1em;
+                        outline: none;
+                        width: 75%;
+                        height: 2em;
+                        font-size: 1rem;
+                        text-align: center;
+                        font-weight: 700;
+                    }
+
+                    textarea {
+                        background: $whiteColor;
+                        color: $darkColor;
+                        border: 0;
+                        border-radius: 1.4em;
+                        outline: none;
+                        width: 100%;
+                        max-width: 100%;
+                        min-width: 100%;
+                        height: 6em;
+                        max-height: 8em;
+                        min-height: 5em;
+                        font-size: 1rem;
+                        text-align: center;
+                        font-weight: 700;
+                        padding: 1em 0 0 0;
+
+                        &::-webkit-input-placeholder {
+                            /* WebKit, Blink, Edge */
+                            color: $darkColor;
+                            opacity: 1;
+                            font-weight: 900;
+                            text-transform: uppercase;
+                        }
+                    }
+
+                    .file {
+                        cursor: pointer;
+                        height: 3em;
+
+                        &::-webkit-file-upload-button {
+                            width: 9em;
+                            height: 3em;
+                            background: $mainColor;
+                            border: 0;
+                            color: $whiteColor;
+                            border-radius: 1.4em;
+                            cursor: pointer;
+                            transition: all 200ms ease-in;
+
+                            &:hover {
+                                background: $secondMainColor;
+                            }
+                        }
+                    }
+
+                    .boximg {
+                        width: 10em;
+                        height: 7em;
+                        margin: auto;
+                        margin-top: 1em;
+                        border-radius: 1em;
+                        overflow: hidden;
+                    }
+
+                    .error-messages {
+                        width: 100%;
+                        height: 1.2em;
+                        padding-left: 1em;
+
+                        p {
+                            font-size: 0.885rem;
+                            color: $error;
+                        }
+                    }
+                }
+
+                .btn-form {
+                    background: #fe6c0c;
+                    color: #fafafa;
+                    border: 0;
+                    width: 100%;
+                    height: 3em;
+                    border-radius: 2em;
+                    outline: none;
+                    cursor: pointer;
+                    font-size: 1.1rem;
+                    text-transform: uppercase;
+                    font-weight: 800;
+                    letter-spacing: 1px;
+                    transition: all 200ms ease-in;
+
+                    &:hover {
+                        background: #fafafa;
+                        color: #fe6c0c;
+                        transform: translateY(-0.5em);
+                    }
+                }
+            }
+        }
+    }
+}

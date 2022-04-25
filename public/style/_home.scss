@@ -1,0 +1,480 @@
+.search {
+    width: 100%;
+    min-height: 5em;
+
+    &-container {
+        width: 85%;
+        height: 100%;
+        margin: auto;
+        padding: 1em 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .box-search {
+            position: relative;
+            height: 3.3em;
+            border-radius: 2em;
+            padding: 0 1em;
+            overflow: hidden;
+            background: $whiteColor;
+
+            @include breakpoint-down(medium) {
+                width: 18em;
+            }
+
+            @include breakpoint-up(medium) {
+                width: 25em;
+            }
+
+            input {
+                position: absolute;
+                left: 1em;
+                top: 0;
+                border: 0;
+                background: transparent;
+                width: 85%;
+                height: 100%;
+                text-align: center;
+                padding: 0 0 0 0.5rem;
+                outline: none;
+                color: $mainColor;
+                font-weight: 700;
+
+                @include breakpoint-down(medium) {
+                    font-size: 1rem;
+                }
+
+                @include breakpoint-up(medium) {
+                    font-size: 1.2rem;
+                }
+
+                &::-webkit-input-placeholder {
+                    /* WebKit, Blink, Edge */
+                    color: $mainColor;
+                    opacity: 1;
+                    font-weight: 900;
+                    text-transform: uppercase;
+                }
+            }
+
+            button {
+                position: absolute;
+                right: 1em;
+                top: 0;
+                border: 0;
+                background: transparent;
+                width: 9%;
+                height: 100%;
+                outline: none;
+                color: #fe6c0c;
+                cursor: pointer;
+                transition: all 200ms ease-in;
+
+                @include breakpoint-down(medium) {
+                    font-size: 1rem;
+                }
+
+                @include breakpoint-up(medium) {
+                    font-size: 1.5rem;
+                }
+
+                &:hover {
+                    color: $darkColor;
+                }
+            }
+        }
+    }
+}
+
+.home {
+    width: 100%;
+    min-height: 45em;
+
+    &-container {
+        width: 100%;
+        height: 100%;
+
+        .home-content {
+            width: 100%;
+            height: 100%;
+
+            .item {
+                width: 100%;
+                height: 35em;
+
+                &-container {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+
+                    .box-img {
+                        position: relative;
+                        width: 100%;
+                        height: 100%;
+
+                        &::after {
+                            position: absolute;
+                            content: "";
+                            width: 100%;
+                            height: 100%;
+                            top: 0;
+                            left: 0;
+                            background: #0000009d;
+                        }
+                    }
+
+                    .item-details {
+                        position: absolute;
+                        height: 15em;
+                        bottom: 3em;
+                        right: 0;
+                        padding: 2em;
+                        z-index: map-get($zIndex, slidder);
+
+                        @include breakpoint-down(large) {
+                            width: 35em;
+                        }
+
+                        @include breakpoint-down(medium) {
+                            width: 100%;
+                        }
+
+                        @include breakpoint-up(large) {
+                            width: 45em;
+                        }
+
+                        h1 {
+                            color: $whiteColor;
+                            text-transform: capitalize;
+                            font-weight: 900;
+                            margin-bottom: 0.5em;
+                            color: $whiteColor;
+
+                            @include breakpoint-down(large) {
+                                font-size: 2.5rem;
+                            }
+
+                            @include breakpoint-down(medium) {
+                                font-size: 2rem;
+                            }
+
+                            @include breakpoint-down(sosmaller) {
+                                font-size: 1.5rem;
+                            }
+
+                            @include breakpoint-up(large) {
+                                font-size: 3.2rem;
+                            }
+                        }
+
+                        p {
+                            color: $whiteColor;
+                            font-weight: 300;
+                            font-size: 1rem;
+                            letter-spacing: 1px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.work {
+    width: 100%;
+    min-height: 40em;
+
+    &-container {
+        padding: 3em 0;
+        width: 85%;
+        margin: 0 auto;
+
+        .work-data {
+            width: 100%;
+            margin-bottom: 5em;
+
+            .work-head {
+                margin-bottom: 2em;
+
+                h2 {
+                    color: $whiteColor;
+                    font-weight: 900;
+
+                    @include breakpoint-down(large) {
+                        font-size: 2rem;
+                    }
+
+                    @include breakpoint-down(medium) {
+                        font-size: 1.5rem;
+                    }
+
+                    @include breakpoint-down(sosmaller) {
+                        font-size: 1.3rem;
+                    }
+
+                    @include breakpoint-up(large) {
+                        font-size: 2.2rem;
+                    }
+                }
+            }
+
+            .work-paragraph {
+                @include breakpoint-down(large) {
+                    width: 35em;
+                }
+
+                @include breakpoint-down(medium) {
+                    width: 25em;
+                }
+
+                @include breakpoint-down(sosmaller) {
+                    width: 15em;
+                }
+
+                @include breakpoint-up(large) {
+                    width: 45em;
+                }
+
+                p {
+                    font-size: 1rem;
+                    font-weight: 300;
+                    letter-spacing: 1px;
+                }
+            }
+        }
+
+        .work-slider {
+            width: 100%;
+            height: auto;
+
+            .item {
+                height: 20em;
+                background: $secondMainColor;
+                border-radius: 2.5em 0.5em;
+                overflow: hidden;
+
+                .box-img {
+                    height: 8em;
+                }
+
+                .box-data {
+                    padding: 0.5em 0.2em 0 0.5em;
+
+                    h2 {
+                        color: $whiteColor;
+                        font-size: 1.2rem;
+                        font-weight: 900;
+                        margin-bottom: 0.5em;
+                    }
+
+                    p {
+                        font-size: 0.95rem;
+                        font-weight: 300;
+                        letter-spacing: 1px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.products {
+    width: 100%;
+    height: auto;
+    padding: 2em 0 0 0;
+
+    &-header {
+        margin-bottom: 5em;
+
+        @include breakpoint-down(large) {
+            width: 85%;
+        }
+
+        @include breakpoint-down(medium) {
+            width: 95%;
+        }
+
+        @include breakpoint-up(large) {
+            width: 50%;
+        }
+
+        h2 {
+            display: block;
+            text-align: center;
+            text-transform: capitalize;
+            font-weight: 900;
+            color: $secondDarkColor;
+
+            @include breakpoint-down(large) {
+                font-size: 5rem;
+            }
+
+            @include breakpoint-down(medium) {
+                font-size: 3rem;
+            }
+
+            @include breakpoint-up(large) {
+                font-size: 7rem;
+            }
+        }
+    }
+
+    &-container {
+        width: 100%;
+        height: auto;
+
+        .products-row {
+            display: flex;
+
+            @include breakpoint-up(sosmaller) {
+                height: 25em;
+                width: 100%;
+                margin-bottom: 4em;
+            }
+
+            @include breakpoint-down(sosmaller) {
+                width: 90%;
+                height: 30em;
+                margin: auto;
+                margin-bottom: 4em;
+                flex-direction: column;
+                border-radius: 2em;
+                overflow: hidden;
+            }
+
+            .box-img {
+                @include breakpoint-up(large) {
+                    flex: 3;
+                    height: 100%;
+                }
+
+                @include breakpoint-down(large) {
+                    flex: 3;
+                    height: 100%;
+                }
+
+                @include breakpoint-down(medium) {
+                    flex: 4;
+                }
+
+                @include breakpoint-down(sosmaller) {
+                    width: 100%;
+                    height: 15em;
+                }
+
+                .img {
+                    @include breakpoint-down(sosmaller) {
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                    @include breakpoint-up(sosmaller) {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+
+            .data-num {
+                height: 100%;
+                display: flex;
+                padding: 0 1.5em 0 0;
+                margin-top: 2em;
+
+                @include breakpoint-down(large) {
+                    flex: 1;
+                }
+
+                @include breakpoint-up(large) {
+                    flex: 2;
+                }
+
+                @include breakpoint-down(smaller) {
+                    display: none;
+                }
+
+                span {
+                    display: inline-block;
+                    font-weight: 800;
+                    color: $secondDarkColor;
+
+                    @include breakpoint-down(large) {
+                        font-size: 6rem;
+                    }
+
+                    @include breakpoint-up(large) {
+                        font-size: 10rem;
+                    }
+
+                    @include breakpoint-down(medium) {
+                        font-size: 4rem;
+                    }
+                }
+            }
+
+            .products-data {
+                height: 100%;
+                display: flex;
+                align-items: center;
+
+                @include breakpoint-down(large) {
+                    flex: 3;
+                }
+
+                @include breakpoint-up(large) {
+                    flex: 3;
+                }
+
+                @include breakpoint-down(medium) {
+                    flex: 4;
+                }
+
+                @include breakpoint-down(sosmaller) {
+                    width: 100%;
+                    height: 15em;
+                    background: $secondMainColor;
+                }
+
+                .products-paragraph {
+                    border-top: 3px solid $secondDarkColor;
+                    text-align: center;
+
+                    @include breakpoint-down(smaller) {
+                        padding: 3em 1em 0 1em;
+                    }
+
+                    @include breakpoint-up(smaller) {
+                        padding: 5em 0 0 0;
+                    }
+
+                    @include breakpoint-down(sosmaller) {
+                        border-top: 0;
+                        padding: 0;
+                    }
+
+                    h3 {
+                        font-size: 1.5rem;
+                        font-weight: 900;
+                        margin-bottom: 1em;
+                        letter-spacing: 1px;
+
+                        @include breakpoint-down(smaller) {
+                            font-size: 1.3rem;
+                        }
+
+                        @include breakpoint-up(smaller) {
+                            font-size: 1.5rem;
+                        }
+                    }
+
+                    p {
+                        font-size: 1rem;
+                        font-weight: 300;
+                        letter-spacing: 1px;
+                    }
+                }
+            }
+        }
+    }
+}

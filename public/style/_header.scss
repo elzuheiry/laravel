@@ -1,0 +1,182 @@
+.header {
+    width: 100%;
+    height: 4em;
+    background: $mainColor;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4em;
+    z-index: map-get($zIndex, nav);
+
+    @include breakpoint-down(smaller) {
+        padding: 0 1.5em;
+    }
+
+    .toggles {
+        width: 5em;
+        height: auto;
+        cursor: pointer;
+        display: none;
+
+        @include breakpoint-down(large) {
+            display: block;
+        }
+
+        .toggle {
+            width: 100%;
+            height: 5px;
+            background: $whiteColor;
+
+            &:not(:last-child) {
+                margin-bottom: 1em;
+            }
+        }
+    }
+
+    .logo {
+        display: inline-block;
+
+        a {
+            h3 {
+                font-size: 2rem;
+                text-transform: uppercase;
+                font-weight: 800;
+                letter-spacing: 1px;
+            }
+        }
+    }
+
+    .nav-bar {
+        @include breakpoint-up(large) {
+            display: inline-block;
+        }
+
+        @include breakpoint-down(large) {
+            position: fixed;
+            width: 75%;
+            height: 100%;
+            top: 0;
+            right: -100%;
+            background: $darkColor;
+            z-index: map-get($zIndex, slidder);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 200ms ease-in;
+        }
+
+        @include breakpoint-down(smaller) {
+            width: 100%;
+        }
+
+        &.active {
+            right: 0;
+        }
+
+        .times {
+            position: absolute;
+            top: 2em;
+            right: 2em;
+
+            @include breakpoint-up(large) {
+                display: none;
+            }
+
+            i {
+                font-size: 1.5rem;
+            }
+        }
+
+        .menu {
+            position: relative;
+
+            @include breakpoint-up(large) {
+                display: flex;
+            }
+
+            @include breakpoint-down(large) {
+                display: block;
+            }
+
+            .menu-link {
+                @include breakpoint-up(large) {
+                    margin: 0 0.5em;
+                }
+
+                @include breakpoint-down(large) {
+                    margin: 2em 0;
+                    text-align: center;
+                }
+
+                a {
+                    text-transform: uppercase;
+                    font-family: "Raleway", sans-serif;
+                    font-size: 0.85rem;
+                    color: $whiteColor;
+                    padding: 0.5rem 0.8rem;
+                    font-weight: 300;
+
+                    &:hover {
+                        background: $whiteColor;
+                        color: $mainColor;
+                    }
+                }
+
+                .dropMenu {
+                    display: none;
+                    position: absolute;
+                    background: $mainColor;
+                    margin-top: 0.5em;
+                    min-width: 4em;
+                    min-height: 2em;
+                    max-height: 20em;
+                    box-shadow: 0px 21px 33px 3px #000000bf;
+                    z-index: map-get($zIndex, nav);
+
+                    @include breakpoint-down(large) {
+                        left: 100%;
+                        width: 7em;
+                    }
+
+                    .dropMenu-link {
+                        width: 100%;
+                        margin: 1em 0;
+                        text-align: center;
+
+                        button {
+                            background: none;
+                            border: 0;
+                            cursor: pointer;
+                            padding: 0.5rem 0.8rem;
+                            font-weight: 300;
+                            color: $whiteColor;
+                            text-transform: uppercase;
+                            font-family: "Raleway", sans-serif;
+                            font-size: 0.85rem;
+                            transition: all 200ms ease-in;
+
+                            &:hover {
+                                background: $whiteColor;
+                                color: $mainColor;
+                            }
+                        }
+                    }
+                }
+            }
+
+            #registration {
+                cursor: pointer;
+
+                &:hover .dropMenu {
+                    display: block;
+                }
+
+                a {
+                    i {
+                        margin-left: 0.5em;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,117 @@
+.about {
+  width: 100%;
+  min-height: 35em;
+
+  &-container {
+    width: 85%;
+    margin: auto;
+    margin-top: 3em;
+    display: flex;
+
+    @include breakpoint-down(large) {
+      flex-direction: column;
+    }
+
+    .about-details {
+      padding: 0 2em;
+
+      @include breakpoint-down(large) {
+        width: 100%;
+        height: auto;
+        margin-bottom: 2em;
+      }
+
+      @include breakpoint-up(large) {
+        flex: 3;
+        height: 100%;
+      }
+
+      h2 {
+        text-transform: capitalize;
+        display: inline-block;
+        font-weight: 800;
+        margin-bottom: 1em;
+        margin-top: 1em;
+
+        @include breakpoint-up(smaller) {
+          font-size: 1.5rem;
+        }
+
+        @include breakpoint-down(smaller) {
+          font-size: 1.2rem;
+        }
+      }
+
+      .about-paragraph {
+        margin: 0 0 5em 0;
+
+        p {
+          font-size: 0.95rem;
+          font-weight: 300;
+          letter-spacing: 1px;
+        }
+      }
+    }
+
+    .about-cover {
+      padding: 4em 1em 0 1em;
+      background: $secondDarkColor;
+      border-radius: 6em 1em;
+
+      @include breakpoint-down(large) {
+        width: 30em;
+        height: 30em;
+        margin: auto;
+      }
+
+      @include breakpoint-down(smaller) {
+        width: 25em;
+      }
+
+      @include breakpoint-down(sosmaller) {
+        width: 20em;
+      }
+
+      @include breakpoint-up(large) {
+        flex: 2;
+      }
+
+      .box-img {
+        width: 9em;
+        height: 9em;
+        border-radius: 50%;
+        margin: auto;
+        margin-bottom: 1em;
+        border: 10px solid $secondMainColor;
+      }
+
+      .box-head {
+        width: 100%;
+        margin-bottom: 1.5em;
+        margin-top: 1em;
+
+        h2 {
+          font-size: 1.2rem;
+          color: $whiteColor;
+          font-weight: 800;
+        }
+      }
+
+      .box-details {
+        width: 75%;
+        margin: auto;
+        margin-top: 1em;
+
+        p {
+          font-size: 0.95rem;
+          font-weight: 300;
+          letter-spacing: 1px;
+        }
+      }
+
+      .box-cover {
+        text-align: center;
+      }
+    }
+  }
+}
