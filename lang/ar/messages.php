@@ -39,5 +39,6 @@ return [
     "logout" => "تسجيل الخروج",
     "dashboard" => "لوحة التحكم",
     "picture" => "صوره",
+    "ahmed" => "احمد",
 
 ];
