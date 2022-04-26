@@ -17,4 +17,10 @@ class Category extends Model
 
     protected $hidden = [
     ];
+
+    public function offers()
+    {
+        return $this->hasMany(Offer::class);
+    }
+
 }
