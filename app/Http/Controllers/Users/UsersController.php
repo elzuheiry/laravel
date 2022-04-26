@@ -38,7 +38,7 @@ class UsersController extends Controller
         ]);
 
         // LET NEW USER TO LOGIN 
-        auth("web")->login($user);
+        auth()->login($user);
         
         // REDIRECT TO HOME PAGE WITH A MESSAGE SUCCESS
         return redirect("/")->with(["success" => "Registration completed successfully"]);
