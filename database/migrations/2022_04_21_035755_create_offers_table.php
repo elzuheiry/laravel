@@ -18,7 +18,7 @@ return new class extends Migration
             $table->integer('category_id');
             $table->integer('user_id');
             $table->string('name');
-            $table->string('excerpt');
+            $table->string('excerpt')->unique();
             $table->string('details');
             $table->string('price');
             $table->string('file');
