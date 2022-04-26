@@ -72,7 +72,7 @@
           </li>
 
           @auth
-            @if (auth()->user()->is_admin === 1)
+            @can ("is_admin")
             <li class="menu-link">
               <a href="">{{ __("messages.vip") }}</a>
             </li>
@@ -90,7 +90,7 @@
                 </li>
               </ul>
             </li>
-            @endif
+            @endcan
 
             <li class="menu-link" id="registration">
               <a>{{ auth()->user()->username }} <i class="fas fa-caret-down"></i></a>
