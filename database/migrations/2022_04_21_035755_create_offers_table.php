@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('excerpt')->unique();
             $table->string('details');
-            $table->string('price');
+            $table->decimal('price', 8, 2);
             $table->string('file');
             $table->timestamps();
         });
