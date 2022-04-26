@@ -22,7 +22,7 @@ class SuperAdminSeeder extends Seeder
             'password' => "12345678",
         ]);
 
-        $user->boolean = true;
+        $user->is_admin = true;
         $user->save();
     }
 }

@@ -14,7 +14,7 @@ class AuthenticateAdmin
             // IF USER GUEST MUST BE LOGIN BEFORE THAT
             return redirect() -> route("login");
 
-        }elseif(auth() -> user() -> boolean === 1){
+        }elseif(auth() -> user() -> is_admin === 1){
             // IF USER AUTH AND BOOLEAN LET USER GOING TO REQUEST
             return $next($request);
         }else{
