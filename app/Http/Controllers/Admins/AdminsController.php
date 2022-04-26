@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\Admins;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\CreateOffer;
-use App\Http\Requests\Edit;
-use Illuminate\Validation\Rule;
 use App\Models\Offer;
+use App\Models\Category;
+use App\Http\Requests\Edit;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
+use App\Http\Requests\CreateOffer;
+use App\Http\Controllers\Controller;
 
 
 
@@ -16,19 +17,21 @@ class AdminsController extends Controller
     public function getNewOffer()
     {
         //
-        return view("admin.new-offer");
+        $categories = Category::all();
+
+        return view("admin.new-offer", compact("categories"));
     }
 
     public function store(CreateOffer $request)
     {
-        // 
+        //
         $file_extension = request("file") -> getClientOriginalExtension();
         $file_name = time() . "." . $file_extension;
         $file_path = "image/offers";
-        
+
         request("file") -> move($file_path, $file_name);
 
-        // CREATE THE REQUEST OF FORM IN DATABASE 
+        // CREATE THE REQUEST OF FORM IN DATABASE
         Offer::create([
             "file" => $file_name,
             "name" => request("name"),
@@ -69,17 +72,17 @@ class AdminsController extends Controller
     }
 
     public function update(Request $request, $id)
-    {   
+    {
         request()->validate([
             "name" => ["required", "string"],
             "excerpt" => ["required", Rule::unique("offers", "excerpt")->ignore($id)],
             "details" => ["required", "string"],
             "price" => ["required", "numeric"],
-            "category_id" => ["required", Rule::exists("categorys", "id")],
+            "category_id" => ["required", Rule::exists("categories", "id")],
         ]);
 
         $update = Offer::select()->find($id);
-        
+
         $update->update($request->all());
         return redirect()->route("dashboard")->with(["success" => "Offer updated.!"]);
     }

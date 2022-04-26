@@ -9,7 +9,7 @@ class Category extends Model
 {
     use HasFactory;
 
-    protected $table = "categorys";
+    protected $table = "categories";
 
     protected $fillable = [
         'name',
@@ -17,4 +17,10 @@ class Category extends Model
 
     protected $hidden = [
     ];
+
+    public function offers()
+    {
+        return $this->hasMany(Offer::class);
+    }
+
 }

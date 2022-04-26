@@ -15,14 +15,16 @@ return new class extends Migration
     {
         Schema::create('offers', function (Blueprint $table) {
             $table->id();
-            $table->integer('category_id');
-            $table->integer('user_id');
+            $table->foreignId('category_id')->constrained()->onDelete('cascade');
+            $table->unsignedBigInteger('user_id');
             $table->string('name');
             $table->string('excerpt')->unique();
             $table->string('details');
-            $table->string('price');
+            $table->decimal('price', 8, 2);
             $table->string('file');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

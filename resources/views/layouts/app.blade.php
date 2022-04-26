@@ -51,7 +51,7 @@
             </ul>
           </li>
           @endif
-          
+
 
           <li class="menu-link" id="registration">
             <a>{{ __("messages.language") }} <i class="fas fa-caret-down"></i></a>
@@ -72,14 +72,14 @@
           </li>
 
           @auth
-            @if (auth()->user()->boolean === 1)
+            @can ("is_admin")
             <li class="menu-link">
               <a href="">{{ __("messages.vip") }}</a>
             </li>
 
             <li class="menu-link" id="registration">
               <a>{{ __("messages.offers") }} <i class="fas fa-caret-down"></i></a>
-  
+
               <ul class="dropMenu" id="dropMenu">
                 <li class="dropMenu-link">
                   <a href="{{ route("dashboard") }}">{{ __("messages.dashboard") }}</a>
@@ -90,17 +90,17 @@
                 </li>
               </ul>
             </li>
-            @endif
+            @endcan
 
             <li class="menu-link" id="registration">
               <a>{{ auth()->user()->username }} <i class="fas fa-caret-down"></i></a>
-  
+
               <ul class="dropMenu" id="dropMenu">
-  
+
                 <li class="dropMenu-link">
                   <a href="{{ route("profile") }}">{{ __("messages.profile") }}</a>
                 </li>
-  
+
                 <li class="dropMenu-link">
                   <form action="{{ route("destroy") }}" method="post">
                     @csrf

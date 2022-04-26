@@ -13,7 +13,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('username')->unique();
-            $table->boolean('boolean')->default(0);
+            $table->boolean('is_admin')->default(0);
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
